@@ -1,0 +1,34 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "356809045e70342c98e81ccbb54ed6993492a4f128e32952a7172f826ec64454": {
+      "displayName": "TestPythonLambda/Code",
+      "source": {
+        "path": "asset.356809045e70342c98e81ccbb54ed6993492a4f128e32952a7172f826ec64454",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region-916250bd": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "356809045e70342c98e81ccbb54ed6993492a4f128e32952a7172f826ec64454.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "20d9e94c28276bc6b9c63d34b8ca1668e04470b1257b9576dba9e9e67bd1f168": {
+      "displayName": "CdkGitStack Template",
+      "source": {
+        "path": "CdkGitStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-c5e78499": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "20d9e94c28276bc6b9c63d34b8ca1668e04470b1257b9576dba9e9e67bd1f168.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

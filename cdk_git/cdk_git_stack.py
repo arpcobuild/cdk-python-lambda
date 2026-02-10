@@ -1,7 +1,6 @@
-from aws_cdk import (
-    Stack,
-    aws_lambda as lambda_,
-)
+from aws_cdk import Stack
+from aws_cdk.aws_lambda_python_alpha import PythonFunction
+from aws_cdk.aws_lambda import Runtime, FunctionUrlAuthType
 from constructs import Construct
 
 
@@ -10,15 +9,15 @@ class CdkGitStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        fn = lambda_.Function(
+        fn = PythonFunction(
             self,
             "TestPythonLambda",
-            runtime=lambda_.Runtime.PYTHON_3_11,
-            handler="app.handler",
-            code=lambda_.Code.from_asset("lambda"),
+            entry="lambda",
+            index="app.py",
+            handler="handler",
+            runtime=Runtime.PYTHON_3_11,
         )
 
-        # 👇 THIS IS THE IMPORTANT PART FOR INNGEST
         fn.add_function_url(
-            auth_type=lambda_.FunctionUrlAuthType.NONE
+            auth_type=FunctionUrlAuthType.NONE
         )
