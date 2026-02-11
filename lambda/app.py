@@ -15,7 +15,7 @@ inngest = Inngest(app_id="cdk-git-test")
     trigger={"event": "demo.hello"},
 )
 def hello_world(ctx):
-    ctx.step("log", lambda: logging.info("From Inngest Lambda"))
+    ctx.step("log", lambda: logging.info("from lambdaaa!!!!!"))
     return {"ok": True}
 
 # IMPORTANT:
